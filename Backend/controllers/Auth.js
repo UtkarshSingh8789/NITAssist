@@ -6,14 +6,14 @@ const registerUser= async(req,res)=>{
         const {firstName,lastName,email,password} =req.body
         if(!firstName || !lastName || !email || !password){
             return res.status(403).json({
-                success:"false",
+                success:false,
                 message:"plz fill all the necessary detail"
             })
         }
         const exitstingUser = await User.findOne({ email })
         if (exitstingUser) {
             return res.status(400).json({
-                success: "false",
+                success: false,
                 message: "User already exist with this mail id",
             })
         }
@@ -26,7 +26,7 @@ const registerUser= async(req,res)=>{
 
         })
         return res.status(200).json({
-            success: "true",
+            success: true,
             message: "User created Successfully",
         })
 
@@ -44,21 +44,21 @@ const login= async(req,res)=>{
         const {email,password}=req.body;
         if(!email || !password){
             return res.status(403).json({
-                success:"false",
+                success:false,
                 message:"plz fill all the necessary detail"
             })
         }
         const user= await User.findOne({email});
         if(!user){
             return res.status(401).json({
-                success:"false",
+                success:false,
                 message:"user is not registered with us"
             })
         }
         const checkPassword=await bcrypt.compare(password,user.password);
         if(!checkPassword){
             return res.status(401).json({
-                success:"false",
+                success:false,
                 message:"Incorrect Password!"
             })
         }
