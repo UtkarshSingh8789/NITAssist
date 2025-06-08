@@ -52,4 +52,4 @@ const fileSchema=new mongoose.Schema({
     default: Date.now,
   },
 },{timestamps:true})
-export const File=mongoose.model("File",fileSchema)
+export const File = mongoose.model("File",fileSchema)
