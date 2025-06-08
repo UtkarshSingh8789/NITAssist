@@ -52,7 +52,7 @@ const login= async(req,res)=>{
         if(!user){
             return res.status(401).json({
                 success:"false",
-                message:"user is not registered with us";
+                message:"user is not registered with us"
             })
         }
         const checkPassword=await bcrypt.compare(password,user.password);
