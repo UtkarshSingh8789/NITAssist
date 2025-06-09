@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 const fileSchema=new mongoose.Schema({
    uploadedBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
+    ref: "User",
     required: true,
   },
   firstName: {
