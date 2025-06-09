@@ -3,6 +3,8 @@ import cors from "cors"
 import cookieParser from "cookie-parser"
 import dotenv from "dotenv"
 import connectDb from "./config/database.js"
+import { cloudinaryConnect } from "./config/cloudinary.js"
+dotenv.config()
 const app=express();
 app.use(cors({
     origin:"*",
@@ -18,7 +20,7 @@ app.use(express.urlencoded({
     limit:"16kb"
 }))
 app.use(cookieParser());
-dotenv.config()
+cloudinaryConnect()
 connectDb().then(()=>{
     app.listen(process.env.PORT || 5000,()=>{
         console.log(`server is runnig at port : ${process.env.PORT}`)
