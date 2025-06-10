@@ -2,7 +2,7 @@ import { Router } from "express";
 import { localFileUpload,getSubjectName,getFilesByDepartmentAndSubject,getUserNotes,deleteNote,fileUploadUsingDriveLink } from "../controllers/File.js";
 import { verifyJWT } from "../middlewares/auth.js";
 import multer from "multer";
-const router=Router();
+const fileRoutes=Router();
 const storage=multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './files');
@@ -15,10 +15,10 @@ const storage=multer.diskStorage({
 const upload = multer({
     storage: storage,
 });
-router.post("/localFileUpload", verifyJWT, upload.single("file"), localFileUpload);
-router.post("/fileUploadUsingDriveLink",verifyJWT,fileUploadUsingDriveLink);
-router.get("/getSubjectName", getSubjectName);
-router.get("/getFilesByDepartmentAndSubject", getFilesByDepartmentAndSubject);
-router.get("/getUserNotes",getUserNotes);
-router.delete("/DeleteNote",deleteNote);
-export default router;
+fileRoutes .post("/localFileUpload", verifyJWT, upload.single("file"), localFileUpload);
+fileRoutes .post("/fileUploadUsingDriveLink",verifyJWT,fileUploadUsingDriveLink);
+fileRoutes .get("/getSubjectName", getSubjectName);
+fileRoutes .get("/getFilesByDepartmentAndSubject", getFilesByDepartmentAndSubject);
+fileRoutes .get("/getUserNotes",getUserNotes);
+fileRoutes .delete("/DeleteNote",deleteNote);
+export default fileRoutes ;
