@@ -21,3 +21,4 @@ router.get("/getSubjectName", getSubjectName);
 router.get("/getFilesByDepartmentAndSubject", getFilesByDepartmentAndSubject);
 router.get("/getUserNotes",getUserNotes);
 router.delete("/DeleteNote",deleteNote);
+export default router;
