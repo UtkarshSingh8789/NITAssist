@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 const initialState = {
   user:localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null,
-  // backend me humlog cookies me user bhje hai ..
   loading:false,
 }
 const profileSlice=createSlice({
