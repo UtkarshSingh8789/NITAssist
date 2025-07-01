@@ -20,7 +20,8 @@ export function localfileUpload(formData, token) {
            // logFormData(uploadFormData);
             const response = await apiConnector("POST", LOCAL_FILE_UPLOAD, uploadFormData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data',//It is a content type used when uploading files via forms.
+                    'Content-Type': 'multipart/form-data',// it is used to tell the server i am sending data in multipart/form-data format
+                    //It is a content type used when uploading files via forms.
                     // It splits the form data into multiple parts (boundaries), allowing you to send:
                     // Text fields (e.g., title, description)
                     // Binary file data (e.g., images, PDFs)
