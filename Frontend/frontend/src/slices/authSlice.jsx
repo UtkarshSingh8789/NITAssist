@@ -21,3 +21,5 @@ const authSlice=createSlice({
 })
 export const {setSignupData,setLoading,setToken}=authSlice.actions;
 export default authSlice.reducer;
+//  By using export default, you can import it anywhere with any name you want.
+
