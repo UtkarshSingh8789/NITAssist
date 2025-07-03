@@ -4,7 +4,7 @@ import { setLoading, setToken } from "../../slices/authSlice.jsx"
 import { endpoints} from "../apis.jsx";
 import { setUser } from "../../slices/profileSlice.jsx"
 const { LOGIN_API, SIGNUP_API } = endpoints
-export function signUp(
+function signUp(
   firstName,
   lastName,
   email,
@@ -37,7 +37,7 @@ export function signUp(
     toast.dismiss(toastId)
   }
 }
-export function login(email, password, navigate) {
+function login(email, password, navigate) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
@@ -68,7 +68,7 @@ export function login(email, password, navigate) {
   }
 }
 
-export function logout(navigate) {
+function logout(navigate) {
   return (dispatch) => {
     dispatch(setUser(null));
     dispatch(setToken(null));
@@ -79,3 +79,4 @@ export function logout(navigate) {
   }
 
 }
+export {signUp,login,logout}

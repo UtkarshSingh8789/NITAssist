@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-import { sendFeedback } from '../../services/operations/feedbackFormApi.jsx';
+import { sendFeedback } from '../../services/operations/apiforfeedback.jsx';
 const FeedbackForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

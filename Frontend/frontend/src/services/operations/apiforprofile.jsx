@@ -2,7 +2,7 @@ import toast from "react-hot-toast"
 import { apiConnector } from "../apiConnector.jsx";
 import { ProfileEndPoints,fileUploadEndpoints } from "../apis.jsx";
 import { setUser } from "../../slices/profileSlice.jsx";
-import { logout } from "./authApi.jsx";
+import { logout } from "./apiforauthentication.jsx";
 const {DELETE_NOTE} = fileUploadEndpoints
 const {GET_USER_DETAILS}  = ProfileEndPoints
 export function getUserDetails(token, navigate) {
