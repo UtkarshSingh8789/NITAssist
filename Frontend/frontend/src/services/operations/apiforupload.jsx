@@ -9,6 +9,7 @@ export function localfileUpload(formData, token) {
         dispatch(setLoading(true));
         try {
             console.log("printing formData" , formData);
+            console.log(token);
             const uploadFormData = new FormData();
             // Append each key-value pair from formData to the FormData instance
             for (const key in formData) {
