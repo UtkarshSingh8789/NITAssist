@@ -9,7 +9,7 @@ const Desktop = () => {
       </div>
       <div className="md:w-5/12 w-8/12 mx-auto text-center italic font-medium mt-20">
         <p>
-          We’re thrilled to have you here! Explore a treasure trove of study notes from your peers and professors. Don’t forget, your contributions can make a big difference – upload your notes today and help your fellow students succeed!
+          Welcome aboard! Dive into a wealth of study notes crafted by your peers and professors. Every note you share lights the path for others—upload yours today and be part of a community that grows by lifting each other.
         </p>
       </div>
     </div>
