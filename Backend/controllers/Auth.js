@@ -2,6 +2,7 @@ import { User } from "../models/User.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt"
 const registerUser= async(req,res)=>{
+    console.log("frontend hits the api")
     try {
         const {firstName,lastName,email,password} =req.body
         if(!firstName || !lastName || !email || !password){

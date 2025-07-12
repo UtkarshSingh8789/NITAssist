@@ -1,19 +1,19 @@
 import { File } from "../models/FileUpload.js";
-const localFileUpload=async(req,res)=>{
+const localFileUpload = async (req, res) => {
     try {
-        const {firstName,lastName, Department , subject , year , fileName} = req.body;
-        if(!fileName || !lastName || !Department || !subject || !year || !firstName){
+        const { firstName, lastName, Department, subject, year } = req.body;
+        const files = req.file;
+
+        if (!files || !lastName || !Department || !subject || !year || !firstName) {
             return res.status(403).json({
-                success:false,
-                message:"plz fill the complete detail"
-            })
+                success: false,
+                message: "plz fill the complete detail"
+            });
         }
-        const files=req.file
-        if (!req.file) {
-            return res.status(400).json({ success: false, message: "No file provided." });
-        }
-        const userId=req.user.id;
-        // console.log(userId)
+
+        const fileName = files.originalname;
+        const userId = req.user.id;
+
         const newFile = new File({
             firstName,
             lastName,
@@ -21,31 +21,31 @@ const localFileUpload=async(req,res)=>{
             year,
             subject,
             fileName,
-            filePath:files.path,
-            uploadedBy: userId, 
+            filePath: files.path,
+            uploadedBy: userId,
         });
+
         try {
             await newFile.save();
             return res.status(200).json({
-                success:true,
+                success: true,
                 message: "file uploaded and data saved",
             });
         } catch (error) {
             console.log("Printing error in saving data ", error.message);
             return res.status(500).json({
-                success:false,
-                message:"Error in file data saving",
+                success: false,
+                message: "Error in file data saving",
             });
         }
-    }
-    catch (error) {
+    } catch (error) {
         console.log("Printing error in file uploading", error.message);
         return res.status(500).json({
             success: false,
             message: "file not uploaded",
         });
     }
-}
+};
 const fileUploadUsingDriveLink=async(req,res)=>{
     try {
         const {firstName,lastName, Department , subject , year , fileName, driveLink} = req.body;
