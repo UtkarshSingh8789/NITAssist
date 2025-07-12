@@ -6,8 +6,8 @@ const Login = () => {
     <>
      <Template 
       title="Welcome Back"
-      description1="Build skills for today, tomorrow, and beyond."
-      description2="Education to future-proof your career."
+      description1="Shape your skills for today’s goals, tomorrow’s opportunities, and a limitless future."
+      description2="Learn today to lead tomorrow."
       image={loginImg}
       formType="login"
 
@@ -16,5 +16,4 @@ const Login = () => {
    
   )
 }
-
 export default Login
