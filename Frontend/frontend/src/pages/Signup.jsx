@@ -3,9 +3,9 @@ import Template from '../components/core/Auth/Template.jsx'
 function Signup() {
   return (
     <Template
-      title="Join the millions learning of Study Notes "
-      description1="Build skills for today, tomorrow, and beyond."
-      description2="Education to future-proof your career."
+      title="Join millions of learners mastering their goals with Study Notes."
+      description1="Grow skills that open doors today and shape your tomorrow."
+      description2="Invest in learning today to secure your tomorrow."
       image={signupImg}
       formType="signup"
     />
