@@ -47,7 +47,7 @@ const Navbar = () => {
       <div className='flex w-11/12 max-w-maxContent items-center justify-between'>
         <div className='cursor-pointer'>
           <Link to='/'>
-            <h1 className='md:text-5xl text-2xl font-extrabold text-blue-500'>NITAssist!!</h1>
+            <h1 className='md:text-5xl text-2xl font-extrabold text-blue-500'>LearnTogether!!</h1>
           </Link>
         </div>
 
