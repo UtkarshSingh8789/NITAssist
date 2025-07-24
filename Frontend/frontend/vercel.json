@@ -11,8 +11,18 @@
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "https://nit-assist-backend.vercel.app/api/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

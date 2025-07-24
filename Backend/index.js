@@ -24,6 +24,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
+    "https://nit-assist-server.vercel.app",
     "https://nit-assist-frontend.vercel.app",
     "https://nitassist.vercel.app",
     process.env.FRONTEND_URL
