@@ -46,6 +46,33 @@ app.get("/", (req, res) => {
   res.send("Server is running");
 });
 
+app.get("/health", async (req, res) => {
+  try {
+    // Simple database connection test
+    const mongoose = await import('mongoose');
+    if (mongoose.default.connection.readyState === 1) {
+      res.json({ 
+        status: "healthy", 
+        database: "connected",
+        timestamp: new Date().toISOString()
+      });
+    } else {
+      res.status(503).json({ 
+        status: "unhealthy", 
+        database: "disconnected",
+        timestamp: new Date().toISOString()
+      });
+    }
+  } catch (error) {
+    res.status(503).json({ 
+      status: "error", 
+      database: "error",
+      error: error.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
 const startServer = async () => {
   try {
     await connectDb();
