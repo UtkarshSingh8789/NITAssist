@@ -24,12 +24,15 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
+    "https://nit-assist.vercel.app",
     "https://nit-assist-server.vercel.app",
     "https://nit-assist-frontend.vercel.app",
     "https://nitassist.vercel.app",
     process.env.FRONTEND_URL
   ].filter(Boolean),
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
 }));
 app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
