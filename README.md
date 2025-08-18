@@ -1,122 +1,69 @@
-📚 NITAssist – Smart Academic Resource & Support Platform
-🚩 Problem Statement
+NITAssist – Smart Academic Resource & Support Platform
 
-In colleges like NIT Agartala, students often face difficulties in finding academic resources such as subject notes, important files, and department-specific study material. Existing systems are scattered, relying on informal sharing through messaging apps, which leads to inefficiency, duplication, and lack of structured access.
+Problem Statement:-
 
-There is a need for a centralized platform where students can easily upload, access, and manage academic content, while ensuring smooth interaction across departments and user roles.
+In colleges like NIT Agartala, students often face difficulties in accessing academic resources such as subject notes, important files, and department-specific study material.
+Currently, most sharing happens informally through messaging apps, leading to Inefficiency,Duplication of content,Lack of structured access
+There is a need for a centralized platform where students can upload, access, and manage academic content efficiently, while ensuring smooth interaction across departments.
+NITAssist bridges this gap by providing a dedicated, role-based platform for managing academic resources with authentication and structured access.
 
-NITAssist bridges this gap by providing a dedicated platform for students to manage resources, connect through authenticated profiles, and collaborate effectively.
+What It Does?
 
-🌟 What It Does
+NITAssist is a full-stack web platform designed for students, offering:
+1.Smart File Uploads – Upload notes/files locally or via Google Drive link.
+2.Department & Subject Filtering – Organized retrieval of resources by branch and subject.
+3.Multi-role User Access – Students get personalized dashboards with authentication.
+4.Profile Management – View uploads, edit personal info, and track contributions.
+5.Feedback System – Students can directly send feedback to admins via email.
 
-NITAssist is a full-stack platform built for students, offering:
+How We Solve the Problem?
 
-📂 Smart File Uploads – Upload notes or files directly or via drive link.
+1.Upload Resources → Students can upload PDFs, notes, or presentations (local or via Drive link). Files are stored securely in MongoDB + Cloudinary.
+2.Organized Retrieval → Resources are categorized by department and subject with search functionality.
+3.Authentication & Security → JWT-based authentication with tokens stored in localStorage.
+4.Feedback & Communication → Built-in Nodemailer system to send suggestions to admins.
+5.Profile & Dashboard → Personalized dashboard to track uploads and manage profile.
 
-🏷️ Department & Subject Filtering – Access resources categorized by branch and subject.
+Key Features:-
 
-👥 Multi-role User Access – Students get personalized dashboards with authentication.
+1.For Students-
+a.Upload notes, slides, and past papers.
+b.Access categorized notes based on department and subject.
+c.Search and filter uploaded content.
+d.Manage and track personal uploads.
 
-📊 Profile Management – Update personal info, view uploads, and manage contributions.
+2.File Management-
+a.Local uploads with Multer + Cloudinary.
+b.Upload via Google Drive links.
+c.Delete uploaded files directly from dashboard.
 
-📢 Feedback System – Submit feedback that directly reaches admins via email.
+3.Communication-
+a.Integrated feedback form with Nodemailer.
+b.Direct communication with admins.
 
-🛠️ How We Solve the Problem
+Tech Stack:-
 
-Upload Resources
+1.Frontend
+a.React.js (Vite)
+b.Tailwind CSS + Daisy UI
+c.Redux Toolkit (state management)
+d.Axios with reusable apiConnector
 
-Students can upload files (PDFs, notes, presentations) either locally or via drive link.
+2.Backend
+a.Node.js + Express.js
+b.JWT Authentication
+c.Multer (file uploads)
+d.Cloudinary (cloud storage)
+e.Nodemailer (feedback emails)
+f.MongoDB + Mongoose
 
-Files are stored securely in MongoDB + Cloudinary with proper categorization.
+User Flow:-
 
-Organized Retrieval
-
-Filter files by department → subject.
-
-Search functionality for quick access.
-
-Authentication & Security
-
-Role-based access with JWT authentication.
-
-Tokens stored securely in localStorage for persistent login.
-
-Feedback & Communication
-
-Students can send suggestions/feedback.
-
-Feedback is sent via Nodemailer to the admin for quick action.
-
-Profile & Dashboard
-
-Every user gets a profile dashboard showing uploaded files and personal data.
-
-Easy management of contributions.
-
-🔑 Key Features
-👩‍🎓 For Students
-
-Upload academic resources (notes, slides, past papers).
-
-Access categorized notes based on department/subject.
-
-Search and filter uploaded content.
-
-Track their own uploads and manage profile.
-
-📂 For File Management
-
-Local uploads using Multer + Cloudinary.
-
-Drive link submission option for external storage.
-
-Delete files directly from dashboard.
-
-📧 For Communication
-
-Feedback form integrated with Nodemailer.
-
-Seamless communication with admins.
-
-🛠️ Tech Stack
-Frontend
-
-⚛️ React.js (Vite)
-
-🎨 Tailwind CSS
-
-🧩 Redux Toolkit for state management
-
-🔄 Axios with reusable apiConnector
-
-Backend
-
-🟢 Node.js + Express.js
-
-🔑 JWT Authentication
-
-📦 Multer (File Uploads)
-
-☁️ Cloudinary (Cloud Storage)
-
-📬 Nodemailer (Feedback emails)
-
-🍃 MongoDB + Mongoose
-
-🚀 User Flow
-
-Sign Up / Login → Authenticate using JWT.
-
-Upload File → Add notes via local file or drive link.
-
-Filter & Access → Retrieve resources by subject/department.
-
-Manage Profile → View & edit uploads and personal info.
-
-Give Feedback → Submit suggestions directly to admin.
-
-## Live Deployment
+1.Sign Up / Login → Authenticate via JWT.
+2.Upload File → Upload notes/files locally or via Drive link.
+3.Filter & Access → Retrieve resources by department and subject.
+4.Manage Profile → Track and edit uploads and personal info.
+5.Give Feedback → Submit suggestions to admins.
 
 **Frontend:** https://nit-assist.vercel.app/
-
 **Backend:** https://nit-assist-backend.vercel.app/ 
