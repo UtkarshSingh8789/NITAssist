@@ -72,6 +72,7 @@ There is a need for a centralized platform where students can **upload, access, 
 ---
 
 ## 🔄 User Flow
+![NITAssist User Flow](./assets/images/nitassist-flow.png)
 1. **Sign Up / Login** → Authenticate via JWT  
 2. **Upload File** → Upload notes/files locally or via Drive link  
 3. **Filter & Access** → Retrieve resources by department and subject  
